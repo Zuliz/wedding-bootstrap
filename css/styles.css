@@ -15,7 +15,7 @@ body {
 
 
 /* use special fonts in certain elements */
-h1,h2,h3,h4,.lead,.btn,.navbar a {
+h1,h2,h3,h4,#date,.lead,.btn,.navbar a {
   text-transform:uppercase;
   font-family:'Voltaire',Arial,sans-serif;
   letter-spacing:2px;
@@ -106,7 +106,7 @@ img.grayscale {
 }
 
 .header {
-  height: 80%;
+  height: 100%;
   background-color: #FA5858;
 }
 
@@ -144,6 +144,12 @@ img.grayscale {
   color:#777;
 }
 
+#date{
+  color: #FA5858;
+  background-color: #fff;
+  font-size: 50px;
+}
+
 .featurette {
   background: #222334;
   padding: 50px 0;
@@ -168,6 +174,12 @@ img.grayscale {
 
 .featurette-item > i:hover {
   font-size: 68px;
+}
+
+.first-block {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 150px;
 }
 
 .callout {
