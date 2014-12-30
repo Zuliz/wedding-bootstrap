@@ -8,7 +8,7 @@ body,
 .container {
   height: 100%;
   width: 100%;
-  font-family:Arial,sans-serif;
+  font-family: 'Voltaire',Arial,sans-serif;
 }
 
 /* fix bs3 horizontal scrollbar bug */
@@ -18,7 +18,7 @@ body,
 /* use special fonts in certain elements */
 h1,h2,h3,h4,#date,.lead,.btn,.navbar a {
   text-transform:uppercase;
-  font-family:'Voltaire',Arial,sans-serif;
+  /*font-family:'Voltaire',Arial,sans-serif;*/
   letter-spacing:2px;
 }
 
@@ -41,7 +41,7 @@ img.grayscale {
 }
 
 .text {
-  font-family: 'Voltaire',Arial,sans-serif;
+  /*font-family: 'Voltaire',Arial,sans-serif;*/
   font-size: 18px;
   width: 75%;
   display: inline-block;
@@ -52,11 +52,12 @@ img.grayscale {
 .img-nom {
   list-style-type: none;
   display: inline-block;
+  text-align: center;
 }
 
 .card {
-  display: block;
-  width: 40%;
+  display: inline-block;
+  width: 50%;
 }
 
 .person {
@@ -66,6 +67,39 @@ img.grayscale {
 .lego-right, .lego-left {
   display: inline-block;
   margin-top: 20px;
+  width: 50%;
+}
+
+.lego-right {
+  float: right;
+}
+
+.lego-right > .lego {
+  text-align: left;
+  margin: 20px;
+}
+
+.lego-left {
+ float: left;
+}
+
+.lego-left > .lego {
+ text-align: right;
+ margin: 20px;
+}
+
+.col-md-7 {
+  width: 100%;
+}
+
+.map, .date-et-lieu {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.map {
+  margin: 20px;
 }
 
 .hidden {
@@ -242,7 +276,6 @@ img.grayscale {
 
 .callout {
   color: #ffffff;
-  padding-top:7%;
   height: 100%;
   width: 100%;
   background: #036997; 
