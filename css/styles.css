@@ -12,7 +12,13 @@ body,
 }
 
 /* fix bs3 horizontal scrollbar bug */
-.row { margin: 0; padding: 0 }
+.row {
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
 
 
 /* use special fonts in certain elements */
@@ -90,10 +96,6 @@ img.grayscale {
 .lego-left > .lego {
  text-align: right;
  margin: 20px;
-}
-
-.col-md-7 {
-  width: 100%;
 }
 
 .map, .date-et-lieu {
@@ -207,6 +209,7 @@ img.grayscale {
 .header {
   height: 100%;
   background-color: #c02f0c;
+  text-align: center;
 }
 
 /* use alt in navbar and header for different color */
@@ -306,11 +309,21 @@ img.grayscale {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  width: 100%;
 }
 
 #navBar nav {
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Ou / Quand / Comment */
+.event-date {
+  float: left;
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
 }
 
 nav {  
