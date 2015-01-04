@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet author="adi3000" id="0.0.1-adding_tables">
+		<createTable tableName="guests">
+			<column name="guest_id" type="number"></column>
+			<column name="guest_first_name" type="varchar(50)"></column>
+			<column name="guest_last_name" type="varchar(50)"></column>
+			<column name="guest_answer" type="number(1)"></column>
+			<column name="guest_type" type="number(1)"></column>
+			<column name="guest_address" type="text"></column>
+			<column name="guest_mail" type="text"></column>
+			<column name="guest_phone" type="varchar(50)"></column>
+			<column name="qr_id" type="number"></column>
+		</createTable>
+		<createTable tableName="privacies">
+			<column name="privacy_id" type="number"></column>
+			<column name="privacy_attribute" type="varchar(50)"></column>
+			<column name="privacy_hidden" type="number(1)"></column>
+			<column name="guest_id" type="number"></column>
+		</createTable>
+		<createTable tableName="qr_codes">
+			<column name="qr_id" type="number"></column>
+			<column name="qr_hash" type="varchar(20)"></column>
+			<column name="qr_description" type="text"></column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
