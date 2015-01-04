@@ -7,17 +7,22 @@ html,
 body,
 .container {
   height: 100%;
-  width: 100%;
+  /*width: 100%;*/
   font-family: 'Voltaire',Arial,sans-serif;
+  font-size: 18px;
 }
 
 /* fix bs3 horizontal scrollbar bug */
 .row {
   margin: 0;
-  padding: 0;
-  top: 50%;
+  padding: 50px 0;
+  /*top: 50%;
   position: relative;
-  transform: translateY(-50%);
+  transform: translateY(-50%);*/
+}
+
+.page {
+  display: block;
 }
 
 
@@ -29,7 +34,7 @@ h1,h2,h3,h4,#date,.lead,.btn,.navbar a {
 }
 
 p {
-  font-size: 11px;
+  /*font-size: 15px;*/
 }
 
 h1 {
@@ -104,9 +109,48 @@ img.grayscale {
   text-align: center;
 }
 
+.liste-hotels {
+  display: inline-block;
+ }
+
+.hotels {
+  list-style-type: none;
+  vertical-align: middle;
+}
+
+.hotels > li {
+  margin: 5px;
+}
+
+.info-hotel {
+  margin-top: 20px;
+}
+
+.google-map {
+  width: 640px;
+  height: 480px;
+}
+a:link {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+a:active {
+  color: #fff !important;
+}
+
 .map {
   margin: 20px;
-  float: right;
 }
 
 .hidden {
@@ -173,27 +217,11 @@ img.grayscale {
    color:#777777;
 }
 
-.navbar a {
-  color:#fff;
-  font-size:14px;
-}
 
-.navbar-bold.affix {
-  background-color:#d46054;
-}
-
-.navbar-bold {
-  background-color:#f68076;
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-
-.navbar-bold li a:hover, .navbar-bold li.active {
-  background-color:#d46054;
-}
 
     
 .header h1 {
-  font-size:80px;
+  font-size: 5em;
   -webkit-text-stroke: 1px rgba(f,f,f,0.1);
   color:#431a6d;
   color:#fff;
@@ -214,23 +242,7 @@ img.grayscale {
   padding-top: 4%;
 }
 
-/* use alt in navbar and header for different color */
 
-.alt {
-  background-color: #424242;
-}
-
-.alt .lead {
-  color: #424242;
-}
-
-.alt.affix {
-  background-color:#424242;
-}
-
-.alt li a:hover, .alt li.active {
-  background-color:#5D17BA;
-}
 
 .blurb {
   /*padding: 50px 0;*/
@@ -247,9 +259,11 @@ img.grayscale {
 }
 
 #date{
-  color: #FA5858;
+  color: #c02f0c;
   background-color: #fff;
-  font-size: 50px;
+  font-size: 3.5em;
+  height: 1em;
+  padding-top: 0.33em;
 }
 
 .featurette {
@@ -281,11 +295,11 @@ img.grayscale {
 .first-block {
   margin-bottom: auto;
   margin-top: auto;
+  width: 100%;
 }
 
 .callout {
   color: #ffffff;
-  height: 100%;
   width: 100%;
   background: #036997; 
   -webkit-background-size: cover;
@@ -314,14 +328,12 @@ img.grayscale {
   width: 100%;
 }
 
-#navBar nav {
-  display: inline-block;
-  vertical-align: middle;
-}
+
 
 /* Ou / Quand / Comment */
 .information {
   margin-top: 20px;
+  vertical-align: top;
 }
 
 .event-date {
@@ -367,7 +379,11 @@ img.grayscale {
   text-align: left;
 }
 
-.event-date, .informations, .images, .placement {
+.informations, .map-hotels {
+  display: block;
+}
+
+.event-date, .images, .placement, .information {
   display: inline-block;
 }
 
@@ -375,6 +391,71 @@ img.grayscale {
   width: 300px;
   border-radius: 6px;
   overflow: hidden;
+} 
+
+ 
+
+@media screen and (max-width: 768px) {
+  .google-map {
+    width: 320px;
+    height: 300px;
+  }
+
+  .header h1 {
+    font-size: 3em;
+  }
+
+  #date {
+    font-size: 2.5em;
+    padding-top: 0.27em;
+  }
+}
+
+footer {
+  padding: 100px 0;
+}
+
+/* -- end custom css for Bootstrap 3.x --*/
+
+/*
+
+.alt {
+  background-color: #424242;
+}
+
+.alt .lead {
+  color: #424242;
+}
+
+.alt.affix {
+  background-color:#424242;
+}
+
+.alt li a:hover, .alt li.active {
+  background-color:#5D17BA;
+}
+
+#navBar nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar a {
+  color:#fff;
+  font-size:14px;
+}
+
+.navbar-bold.affix {
+  background-color:#d46054;
+}
+
+.navbar-bold {
+  background-color:#f68076;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.navbar-bold li a:hover, .navbar-bold li.active {
+  background-color:#d46054;
 }
 
 nav {  
@@ -397,19 +478,7 @@ nav li {
 background: #424242;
     margin-right: 10px;
     margin-left: 10px; 
-}  
-
-.clearfix:before,  
-.clearfix:after {  
-    content: " ";  
-    display: table;  
-}  
-.clearfix:after {  
-    clear: both;  
-}  
-.clearfix {  
-    *zoom: 1;  
-}  
+} 
 
 nav a {  
     color: #fff;  
@@ -430,6 +499,18 @@ nav a:hover, nav a:active {
 
 nav a#pull {  
     display: none;  
+} 
+
+.clearfix:before,  
+.clearfix:after {  
+    content: " ";  
+    display: table;  
+}  
+.clearfix:after {  
+    clear: both;  
+}  
+.clearfix {  
+    *zoom: 1;  
 }  
 
 @media screen and (max-width: 1000px) {  
@@ -480,10 +561,4 @@ nav a#pull {
         position: absolute; 
         top: 10px;  
     }  
-}  
-
-footer {
-  padding: 100px 0;
-}
-
-/* -- end custom css for Bootstrap 3.x --*/
+} */

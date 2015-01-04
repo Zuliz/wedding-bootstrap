@@ -11,13 +11,22 @@ $(document).ready(function(){/* smooth scrolling for scroll to top */
 	/* highlight the top nav as scrolling occurs */
 	$('body').scrollspy({ target: '#navbar' })
 
+	/*$("#menu").mmenu();
+	
+	$("#button").click(function() {
+         $("#menu").trigger("open.mm");
+      });
+	$("#button").click(function() {
+         $("#menu").trigger("close.mm");
+      });*/
+	
 });
 
 function scrollNav(id){
 			$('html,body').animate({scrollTop: $(""+id).offset().top},'slow');
 }
 
-$(function() {  
+/*$(function() {  
     var pull        = $('#pull');  
         menu        = $('nav ul');  
         menuHeight  = menu.height();  
@@ -33,4 +42,37 @@ $(function() {
 	        menu.removeAttr('style');  
 	    }  
 	});
-});  
+});  */
+
+$(function() {
+		var $menu = $('nav#menu'),
+			$html = $('html, body');
+
+		$menu
+			.mmenu()
+			.find( 'a' )
+			.on( 'click',
+				function()
+				{
+					var href = $(this).attr( 'href' );
+					$menu.one(
+						'closed.mm',
+						function()
+						{
+							setTimeout(
+								function()
+								{
+									$html.animate({
+										scrollTop: $( href ).offset().top
+									});	
+								}, 10
+							);	
+						}
+					);
+				}
+			)
+			.end()
+			.find( 'li' )
+			.first()
+			.trigger( 'setSelected' );
+	});

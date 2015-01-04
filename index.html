@@ -8,16 +8,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/jquery.mmenu.all.css" type="text/css" rel="stylesheet" />
+    <link href="css/demo.css" type="text/css" rel="stylesheet" />
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mmenu.min.all.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 	</head>
 	<body>
     
-    <<div class="navbar navbar-fixed-top alt" data-spy="affix" data-offset-top="1000">
-      <div class="container">
+    <!--<div class="navbar navbar-fixed-top alt" data-spy="affix" data-offset-top="1000">
         <div class="navbar-collapse collapse" id="navbar">
           <nav class="clearfix">
             <ul class="clearfix">
@@ -25,231 +30,276 @@
               <li><a href="#sec1">Nos Témoins</a></li>
               <li><a href="#sec2">La Demande</a></li>
               <li><a href="#sec3">Où/Quand/Comment</a></li>
-              <li><a href="#sec4">Cadeaux</a></li>
               <li><a href="#sec5">RSVP</a></li>
             </ul>
             <a href="#" id="pull">Menu</a>
           </nav>
-          <!--<ul class="nav navbar-nav">
+            
+
+          
+          <ul class="nav navbar-nav">
             <li><a href="#">Nous</a></li>
             <li><a href="#sec1">Notre Histoire</a></li>
             <li><a href="#sec2">La Demande</a></li>
             <li><a href="#sec3">Où/Quand/Comment</a></li>
-            <li><a href="#sec4">Cadeaux</a></li>
             <li><a href="#sec5">RSVP</a></li>
-          </ul>-->
+          </ul>
         </div>
-       </div>
-    </div>
 
-    <div class="header vert">
-      <div class="container first-block">        
-        <h1>Julie et Adrien</h1>
-        <div>
-          <p id="date">Le 6 juin 2015</p>
-        </div>
-        <div>&nbsp;</div>
-      </div>
-    </div>
+    </div>-->
+
+    
+    <nav id="menu" class="mm-menu mm-horizontal mm-offcanvas">
+      <ul id="mm-0" class="mm-list mm-panel mm-opened mm-current">
+        <li class="mm-selected"><a href="#">Nous</a></li>
+        <li><a href="#sec1">Nos Témoins</a></li>
+        <li><a href="#sec2">La Demande</a></li>
+        <li><a href="#sec3">Où/Quand/Comment</a></li>
+        <li><a href="#sec5">RSVP</a></li>
+      </ul>
+    </nav>
 
 
-    <div id="sec1" class="blurb header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h1>Nos Témoins</h1>
-            <div class="hidden">http://www.reasonablyclever.com/mm2/mini2.swf</div>
-            <div class="lego-left">
-              <div class="lego">
-                <div class="person">
-                  <div class="card">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                  <div class="img-nom">
-                    <img src="img/lego-caroline.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Caroline</p>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="lego">
-                <div class="person">
-                  <div class="card">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                  <div class="img-nom">
-                    <img src="img/lego-angela.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Angela</p>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="lego">
-                <div class="person">
-                  <div class="card">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                  <div class="img-nom">
-                    <img src="img/lego-isabelle.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Isabelle</p>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="lego-right">
-              <div class="lego">
-                <div class="person">
-                  <div class="img-nom">
-                    <img src="img/lego-anja.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Anja</p>
-                  </div>
-                  <div class="card">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="lego">
-                <div class="person">
-                  <div class="img-nom">
-                    <img src="img/lego-kevin.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Kevin</p>
-                  </div>
-                  <div class="card">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="lego">
-                <div class="person">
-                  <div class="img-nom">
-                    <img src="img/lego-ludovic.png" style="width:100px;height:100px" class="img-circle"/>
-                    <p class="text">Ludovic</p>
-                  </div>
-                  <div class="card">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus. Mauris pretium a neque a bibendum. Phasellus posuere dictum eros in porta. Quisque euismod quam quis dignissim interdum. Vestibulum ullamcorper fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="featurette  header" id="sec2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>La Demande</h1>
-          </div>
+    <div id="page" class="mm-page mm-slideout">
+      <div class="header vert page">
+        <div class="container first-block">        
+          <h1>Julie et Adrien</h1>
           <div>
-            <p class="text">
-              Pour les personnes qui nous connaissent bien, la demande de M. Adrien ne vous étonnera pas. <br/>
-              Un soir d'octobre, le 4 octobre 2013 plus précisément, Adrien ne cessait de m'inciter à travailler, quelle drôle d'idée pour un vendredi soir. Pour ne pas changer, je préfère faire l'inverse de ce qu'il me demande et donc reste à flaner dans le canapé. <br/>
-              Une fois que M. n'insiste plus pour que je travaille et je me dirige vers l'ordinateur.  <br/>
-              Etrangement, une console (la boîte noire) était ouverte avec un petit message étrange d'écrit : <br/>
-              "Somme issue with terminal have been recorded, would you want to fix it now ? [Y/N]". <br/>
-              Ne connaissant pas ce message d'erreur, je demande à M. la bonne réponse, et là, il se rend compte qu'il avait complètement oublié ce qui m'attendait mais il m'a tout de même conseiller de valider le message. <br/>
-              Je vous laisse découvrir ou redécouvrir la suite de l'histoire.
-            </p>
+            <p id="date">Le 6 juin 2015</p>
           </div>
-          <div>
-            <video width="400" height="222" controls="controls">
-              <source src="img/proposal.mp4" type="video/mp4" />
-              Petite vidéo de la demande By Adi.
-            </video>
-          </div>
+          <div>&nbsp;</div>
         </div>
       </div>
-    </div>
 
-    <div class="callout header" id="sec3">
-      <div class="vert row">
-        <div class="col-md-12 text-center ouquandcomment"><h1>Où/Quand/Comment</h1>
-          
-          <div class="informations">
-            <div class="information">
-              <div class="event-date">
-                <div class="date">
-                  <span class="day">6</span>
-                  <span class="month">Juin 2015</span>
+
+      <div id="sec1" class="blurb page">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1>Nos Témoins</h1>
+              <div class="hidden">http://www.reasonablyclever.com/mm2/mini2.swf</div>
+              <div class="lego-left">
+                <div class="lego">
+                  <div class="person">
+                    <div class="card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                    <div class="img-nom">
+                      <img src="img/lego-caroline.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Caroline</p>
+                    </div>
+                    
+                  </div>
                 </div>
-                <div class="hour">15:30</div>
+                <div class="lego">
+                  <div class="person">
+                    <div class="card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                    <div class="img-nom">
+                      <img src="img/lego-angela.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Angela</p>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="lego">
+                  <div class="person">
+                    <div class="card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                    <div class="img-nom">
+                      <img src="img/lego-isabelle.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Isabelle</p>
+                    </div>
+                    
+                  </div>
+                </div>
               </div>
-              <div class="placement">
-                <div class="description">
-                  <h3>Cérémonie à la Mairie</h3>
-                  <p class="title-place">Mairie d'Andé - 5 rue des Ecoles - 27430 Andé</p>
+              <div class="lego-right">
+                <div class="lego">
+                  <div class="person">
+                    <div class="img-nom">
+                      <img src="img/lego-anja.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Anja</p>
+                    </div>
+                    <div class="card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="images">
-                  <img src="img/mairie_d-ande.PNG">
+                <div class="lego">
+                  <div class="person">
+                    <div class="img-nom">
+                      <img src="img/lego-kevin.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Kevin</p>
+                    </div>
+                    <div class="card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lego">
+                  <div class="person">
+                    <div class="img-nom">
+                      <img src="img/lego-ludovic.png" style="width:100px;height:100px" class="img-circle"/>
+                      <p class="text">Ludovic</p>
+                    </div>
+                    <div class="card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet pulvinar enim lobortis eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec sagittis molestie lectus a rhoncus.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="information">
-              <div class="event-date">
-                <div class="date">
-                  <span class="day">6</span>
-                  <span class="month">Juin 2015</span>
-                </div>
-                <div class="hour">16:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featurette page" id="sec2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>La Demande</h1>
+            </div>
+            <div>
+              <p class="text">
+                Pour les personnes qui nous connaissent bien, la demande de M. Adrien ne vous étonnera pas. <br/>
+                Un soir d'octobre, le 4 octobre 2013 plus précisément, Adrien ne cessait de m'inciter à travailler, quelle drôle d'idée pour un vendredi soir. Pour ne pas changer, je préfère faire l'inverse de ce qu'il me demande et donc reste à flaner dans le canapé. <br/>
+                Une fois que M. n'insiste plus pour que je travaille et je me dirige vers l'ordinateur.  <br/>
+                Etrangement, une console (la boîte noire) était ouverte avec un petit message étrange d'écrit : <br/>
+                "Somme issue with terminal have been recorded, would you want to fix it now ? [Y/N]". <br/>
+                Ne connaissant pas ce message d'erreur, je demande à M. la bonne réponse, et là, il se rend compte qu'il avait complètement oublié ce qui m'attendait mais il m'a tout de même conseiller de valider le message. <br/>
+                Je vous laisse découvrir ou redécouvrir la suite de l'histoire.
+              </p>
+            </div>
+            <div>
+              <video width="400" height="222" controls="controls">
+                <source src="img/proposal.mp4" type="video/mp4" />
+                Petite vidéo de la demande By Adi.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout page" id="sec3">
+        <div class="row">
+          <div class="col-md-12 text-center ouquandcomment"><h1>Où/Quand/Comment</h1>
+            <div class="map-hotels">
+              <div class="map">
+                <iframe class="google-map" src="https://mapsengine.google.com/map/embed?mid=zRPm7h2VkobM.kYUa1CGVaAmU"></iframe>
+                </iframe>
               </div>
-              <div class="placement">
-                <div class="description">
-                  <h3>Vin d'honneur</h3>
-                  <p class="title-place">Théâtre du Moulin d'Andé - au bout de la rue du Moulin - 27430 Andé</p>
+              <div class="liste-hotels">
+                <h3>Hôtels/Gîtes proches de la réception</h3>
+                <ul class="hotels">
+                  <li> (A) <a href="http://www.moulinande.com/sejourner.php">La Serre</a> : sur le lieu de la réception</li>
+                  <li> (B) <a href="http://www.gite-ande-eure-les-kikounets.fr/92884999">Les Kikounets </a>: à 5 minutes à pieds</li>
+                  <li> (C) <a href="http://www.gite-des-roses-eure.fr/1.html">Le Gite des Roses</a> : à 15 minutes à pieds</li>
+                  <li> (D) <a href="http://location-gite-chambre-d-hote-le-val-d-ande-normandie.fr/12.html">Le Val d'Andé</a> : à 15 minutes à pieds</li>               
+                </ul>
+                <p class="info-hotel">Implentation de tentes possible dans le jardin des parents de la future mariée (à 10 minutes à pieds)</p>
+              </div>
+            </div> 
+            
+
+            <div class="informations">
+              <div class="information">
+                <div class="event-date">
+                  <div class="date">
+                    <span class="day">6</span>
+                    <span class="month">Juin 2015</span>
+                  </div>
+                  <div class="hour">15:30</div>
                 </div>
-                <div class="images">
-                  <img src="img/moulin_d-ande.PNG">
+                <div class="placement">
+                  <div class="description">
+                    <h3>Cérémonie à la Mairie</h3>
+                    <p class="title-place">Mairie d'Andé - 5 rue des Ecoles - 27430 Andé</p>
+                  </div>
+                  <div class="images">
+                    <img src="img/mairie.jpg">
+                  </div>
+                </div>
+              </div>
+              <div class="information">
+                <div class="event-date">
+                  <div class="date">
+                    <span class="day">6</span>
+                    <span class="month">Juin 2015</span>
+                  </div>
+                  <div class="hour">16:00</div>
+                </div>
+                <div class="placement">
+                  <div class="description">
+                    <h3>Vin d'honneur</h3>
+                    <p class="title-place">Théâtre du Moulin d'Andé - au bout de la rue du Moulin - 27430 Andé</p>
+                  </div>
+                  <div class="images">
+                    <img src="img/vin_d-honneur.jpg">
+                  </div>
+                </div>
+              </div>
+              <div class="information">
+                <div class="event-date">
+                  <div class="date">
+                    <span class="day">6</span>
+                    <span class="month">Juin 2015</span>
+                  </div>
+                  <div class="hour">19:00</div>
+                </div>
+                <div class="placement">
+                  <div class="description">
+                    <h3>Dîner</h3>
+                    <p class="title-place">Théâtre du Moulin d'Andé - au bout de la rue du Moulin - 27430 Andé</p>
+                  </div>
+                  <div class="images">
+                    <img src="img/diner.jpg">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10420.729493544628!2d1.2473395952585402!3d49.235031424505316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1420233470940" width="600" height="450" frameborder="0" style="border:0"></iframe>
-            </iframe>
+            
+            
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="blurb header" id="sec4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Cadeaux</h1>
-          </div>
-        </div>
-        <p>
-
-        </p>
-      </div>
-    </div>
-
-    <div class="featurette" id="sec5">
-      <div class="container">
-        <h1>RSVP</h1>
-      </div>
-    </div>
-
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <ul class="list-inline">
-              <li><i class="icon-facebook icon-2x"></i></li>
-              <li><i class="icon-twitter icon-2x"></i></li>
-              <li><i class="icon-google-plus icon-2x"></i></li>
-              <li><i class="icon-pinterest icon-2x"></i></li>
-            </ul>
-            <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company ©2014</p>
-          </div>
+      <div class="featurette page" id="sec5">
+        <div class="container">
+          <h1>RSVP</h1>
         </div>
       </div>
-    </footer>
+
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <ul class="list-inline">
+                <li><i class="icon-facebook icon-2x"></i></li>
+                <li><i class="icon-twitter icon-2x"></i></li>
+                <li><i class="icon-google-plus icon-2x"></i></li>
+                <li><i class="icon-pinterest icon-2x"></i></li>
+              </ul>
+              <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company ©2014</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="mm-blocker" class="mm-slideout"></div>
+
+    <div class="menu-header mm-fixed-top mm-slideout">
+      <a href="#menu"></a>
+      Menu
+    </div>
+
+
+
 
     <ul class="nav pull-right scroll-down">
       <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
@@ -259,8 +309,6 @@
     </ul>
 
 	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
+		
 	</body>
 </html>
