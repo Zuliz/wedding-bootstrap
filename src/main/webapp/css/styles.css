@@ -394,9 +394,18 @@ a:active {
   width: 300px;
   border-radius: 6px;
   overflow: hidden;
-} 
+}
 
- 
+.menuTop{
+	display: block;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+.menuTop .menuTopEntry{
+	display : inline-block;
+	margin : 0 5px;
+}
 
 @media screen and (max-width: 768px) {
   .google-map {
