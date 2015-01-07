@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -68,7 +69,7 @@ public class QrCode extends AbstractDataObject{
 	/**
 	 * @return the guests
 	 */
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="qr_id")
 	public Set<Guest> getGuests() {
 		return guests;

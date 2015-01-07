@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -130,7 +131,7 @@ public class Guest extends AbstractDataObject{
 	/**
 	 * @return the privacy
 	 */
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="guest_id")
 	public Set<PrivacyAttribute> getPrivacy() {
 		return privacy;

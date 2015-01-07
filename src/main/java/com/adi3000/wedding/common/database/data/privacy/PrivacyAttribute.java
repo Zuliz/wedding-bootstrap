@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.Type;
 
 import com.adi3000.common.database.hibernate.data.AbstractDataObject;
 
@@ -49,6 +52,7 @@ public class PrivacyAttribute extends AbstractDataObject{
 	 * @return the hidden
 	 */
 	@Column(name="privacy_hidden")
+	@Type(type = "numeric_boolean")
 	public Boolean getHidden() {
 		return hidden;
 	}
@@ -59,6 +63,7 @@ public class PrivacyAttribute extends AbstractDataObject{
 		this.hidden = hidden;
 	}
 	
+	@Transient
 	public boolean isHidden(){
 		return hidden != null && hidden.booleanValue();
 	}
