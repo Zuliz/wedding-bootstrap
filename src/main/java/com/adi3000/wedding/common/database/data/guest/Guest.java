@@ -29,6 +29,7 @@ public class Guest extends AbstractDataObject{
 	private String address;
 	private Integer answerId;
 	private Integer typeId;
+	private String description;
 	private Set<PrivacyAttribute> privacy;
 
 	@Override
@@ -163,6 +164,21 @@ public class Guest extends AbstractDataObject{
 	 */
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	/**
+	 * @return the description
+	 */
+	@Column(name="guest_description")
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

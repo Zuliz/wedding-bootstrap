@@ -26,4 +26,9 @@
 			<column name="qr_description" type="text"></column>
 		</createTable>
 	</changeSet>
+	<changeSet author="adi3000"  id="0.0.1-zz-02-adding_column_desc_guest">
+	    <addColumn tableName="guests">
+	        <column name="guest_description" type="text"></column>
+	    </addColumn>
+	</changeSet>
 </databaseChangeLog>
