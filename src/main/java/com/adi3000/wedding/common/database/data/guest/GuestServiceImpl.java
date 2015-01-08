@@ -44,8 +44,8 @@ public class GuestServiceImpl extends AbstractDAO<Guest> implements GuestService
 	@TransactionalReadOnly
 	public List<Guest> getAllBestMen(){
 		@SuppressWarnings("unchecked")
-		List<Guest> guests = super.getSession().createCriteria(getClass())
-				.add(Restrictions.eq("type", GuestType.BEST_MAN.getValue()))
+		List<Guest> guests = super.getSession().createCriteria(Guest.class)
+				.add(Restrictions.eq("typeId", GuestType.BEST_MAN.getValue()))
 				.list();
 		if(guests != null){
 			for(Guest guest : guests){

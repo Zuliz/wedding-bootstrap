@@ -11,5 +11,12 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute'])
 		      $anchorScroll();
 		    };
 		}
+	])
+	.controller('bestMenController', ['$scope', 'weddingService',
+	    function($scope, weddingService){
+			weddingService.getBestMen().$promise.then(function(bestMen){
+				$scope.bestMen = bestMen;
+			});
+		}
 	]);
 
