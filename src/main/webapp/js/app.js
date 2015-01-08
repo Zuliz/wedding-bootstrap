@@ -5,6 +5,7 @@
 var wedding = angular.module('wedding', [
   'duScroll',
   /*'weddingDirectives',*/
-  'weddingControllers'
+  'weddingControllers',
+  'ui.bootstrap'
 ]);
 

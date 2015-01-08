@@ -18,5 +18,11 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute'])
 				$scope.bestMen = bestMen;
 			});
 		}
+	]).controller('rsvpController', ['$scope', 'weddingService',
+	    function($scope, weddingService){
+			weddingService.getGuestByHash("pelletier").$promise.then(function(guests){
+				$scope.guests = guests;
+			});
+		}
 	]);
 

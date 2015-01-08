@@ -1,5 +1,13 @@
-<div class="featurette page" id="sec5">
-  <div class="container">
-    <h1>RSVP</h1>
-  </div>
+<div id="sec5" class="popup" data-ng-controller="rsvpController">
+	<h1>RSVP</h1>
+	<div class="familly">
+		<div class="guest" data-ng-repeat="guest in guests">
+			<p>{{guest.firstName}} {{guest.lastName}} sera :</p>
+			<div class="btn-group">
+		        <label class="btn btn-primary" data-btn-radio="'Present'">De la Partie !</label>
+		        <label class="btn btn-primary" data-btn-radio="'Absent'">Ailleurs, désolé.</label>
+		        <label class="btn btn-primary" data-btn-radio="'Betise'">A la piscine :/</label>
+		    </div>
+		</div>
+	</div>
 </div>
