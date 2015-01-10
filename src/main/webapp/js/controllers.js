@@ -8,8 +8,11 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
 			$scope.hash = hash;
 			$scope.gotoQrCode = function(hash){
 				console.log("ahahahaa", hash);
-				$location.path("/"+hash).replace();
+				$location.path("/"+hash.toLowerCase()).replace();
 				$scope.hash = hash;
+			};
+			$scope.refreshQrCode = function(){
+				this.gotoQrCode(this.hash);
 			};
 		}
 	])
@@ -22,8 +25,8 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
 				});
 			});
 		}
-	]).controller('RSVPController', ['$scope', 'weddingService',
-	    function($scope, weddingService){
+	]).controller('RSVPController', ['$scope', 'weddingService', '$location',
+	    function($scope, weddingService, $location){
 			weddingService.getQrCode($scope.ngDialogData.hash).$promise.then(function(qrCode){
 				$scope.qrCode= qrCode;
 				sessionStorage.setItem("qrCode", qrCode.hash);
@@ -31,9 +34,12 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
 				if(reason.status == "404"){
 					alert("Cette réservation n'existe pas");
 				}
+				console.log("scope",$scope);
+				$scope.ngDialogData.hash = null;
 				sessionStorage.removeItem("qrCode");
 				console.log("Error", reason);
 				$scope.closeThisDialog();
+				$scope.$apply($location.path("/"));
 			});
 		}
 	]);
