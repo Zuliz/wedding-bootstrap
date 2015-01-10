@@ -11,17 +11,18 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Service;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.adi3000.common.database.hibernate.DatabaseOperation;
 import com.adi3000.wedding.common.database.data.GuestType;
 import com.adi3000.wedding.common.database.data.guest.Guest;
 import com.adi3000.wedding.common.database.data.guest.GuestService;
@@ -79,6 +80,11 @@ public class GuestRESTService extends SpringBeanAutowiringSupport {
 		return new GenericEntity<List<Guest>>(guests) {};
 	}
 	
+	@GET
+	@Path("{id}")
+	public GenericEntity<Guest> getGuestById(@PathParam("id") Integer id){
+		return new GenericEntity<Guest>(guestService.get(id)) {};
+	}
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -91,5 +97,17 @@ public class GuestRESTService extends SpringBeanAutowiringSupport {
 	public GenericEntity<Guest> update(Guest guest){
 		return new GenericEntity<Guest>(guestService.update(guest)) {};
 	}
+	
+	@GET
+	@Path("qrCode/{hash}")
+	public Response getGuestById(@PathParam("hash") String hash){
+		QrCode qrCode = qrCodeService.getByHash(hash);
+		if(qrCode == null || CollectionUtils.isEmpty(qrCode.getGuests())){
+			return Response.status(404).entity(qrCode).build();
+		}
+		return Response.status(200).entity(new GenericEntity<QrCode>(qrCode){}).build();
+	}
+	
+	
 
 }

@@ -8,8 +8,13 @@ var weddingServices = angular.module('weddingServices', ['ngResource'])
 			return $resource('rest/guests/:guestId', {guestId: '@id', q : "@q", t : "@t" });
 		}
 	])
-	.service('weddingService', ['guests',
-        function(Guests){
+	.factory('qrCodes', ['$resource',
+	                    function($resource){
+		return $resource('rest/guests/qrCode/:hash', {hash: '@hash'});
+	}
+	])
+	.service('weddingService', ['guests', 'qrCodes',
+        function(Guests, QrCodes){
 			return {
 				getBestMen : function() { return Guests.query({ t : 1 });},
 				getGuestByHash : function(hash) {
@@ -18,7 +23,8 @@ var weddingServices = angular.module('weddingServices', ['ngResource'])
 				save : function(guest){
 					return guests.$save();
 				},
-				get : function(id){ return  Guests.get({ id : id });}
+				get : function(id){ return  Guests.get({ id : id });},
+				getQrCode : function(hash){ return  QrCodes.get({ hash : hash });}
 			};
 		}
 	]);
