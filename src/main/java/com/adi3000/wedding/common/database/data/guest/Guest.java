@@ -1,5 +1,6 @@
 package com.adi3000.wedding.common.database.data.guest;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -30,6 +31,7 @@ public class Guest extends AbstractDataObject{
 	private Integer answerId;
 	private Integer typeId;
 	private String description;
+	private Date lastUpdate;
 	private Set<PrivacyAttribute> privacy;
 
 	@Override
@@ -179,6 +181,21 @@ public class Guest extends AbstractDataObject{
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	/**
+	 * @return the lastUpdate
+	 */
+	@Column(name="guest_last_update")
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	/**
+	 * @param lastUpdate the lastUpdate to set
+	 */
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
 	}
 
 }

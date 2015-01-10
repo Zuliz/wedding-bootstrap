@@ -2,18 +2,21 @@
 
 /* Controllers */
 angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
-	.controller('WeddingController', ['$scope', '$location', 'ngDialog',
-        function($scope, $location, ngDialog){
+	.controller('WeddingController', ['$scope', '$rootScope', '$location', 'ngDialog',
+        function($scope, $rootScope, $location, ngDialog){
 			var hash =  isEmpty($location.path()) ? null : $location.path().substr(1);
 			$scope.hash = hash;
 			$scope.gotoQrCode = function(hash){
-				console.log("ahahahaa", hash);
 				$location.path("/"+hash.toLowerCase()).replace();
 				$scope.hash = hash;
 			};
 			$scope.refreshQrCode = function(){
 				this.gotoQrCode(this.hash);
 			};
+			$rootScope.$on("wrongQrCode", function(e, hashCode){
+				$scope.hash = null;
+			});
+
 		}
 	])
 	.controller('BestMenController', ['$scope', 'weddingService',
@@ -25,21 +28,19 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
 				});
 			});
 		}
-	]).controller('RSVPController', ['$scope', 'weddingService', '$location',
-	    function($scope, weddingService, $location){
+	]).controller('RSVPController', ['$scope', '$rootScope', 'weddingService', '$location',
+	    function($scope, $rootScope, weddingService, $location){
 			weddingService.getQrCode($scope.ngDialogData.hash).$promise.then(function(qrCode){
 				$scope.qrCode= qrCode;
 				sessionStorage.setItem("qrCode", qrCode.hash);
 			},function(reason){
 				if(reason.status == "404"){
-					alert("Cette réservation n'existe pas");
+					alert("Le code réponse "+$scope.ngDialogData.hash+" n'existe pas");
 				}
-				console.log("scope",$scope);
-				$scope.ngDialogData.hash = null;
+				$rootScope.$emit("wrongQrCode", $scope.ngDialogData.hash);
 				sessionStorage.removeItem("qrCode");
 				console.log("Error", reason);
 				$scope.closeThisDialog();
-				$scope.$apply($location.path("/"));
 			});
 		}
 	]);

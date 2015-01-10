@@ -85,12 +85,6 @@ public class GuestRESTService extends SpringBeanAutowiringSupport {
 	public GenericEntity<Guest> getGuestById(@PathParam("id") Integer id){
 		return new GenericEntity<Guest>(guestService.get(id)) {};
 	}
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public GenericEntity<Guest> save(Guest guest){
-		return new GenericEntity<Guest>(guestService.save(guest)) {};
-	}
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -106,6 +100,12 @@ public class GuestRESTService extends SpringBeanAutowiringSupport {
 			return Response.status(404).entity(qrCode).build();
 		}
 		return Response.status(200).entity(new GenericEntity<QrCode>(qrCode){}).build();
+	}
+	
+	@POST
+	@Path("qrCode/{hash}")
+	public Response saveAnswer(@PathParam("hash") String hash, QrCode request){
+		return Response.status(200).entity(new GenericEntity<QrCode>(guestService.updateAnswerFromQrCode(request)){}).build();
 	}
 	
 	

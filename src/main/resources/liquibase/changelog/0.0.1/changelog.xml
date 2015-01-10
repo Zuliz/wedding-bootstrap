@@ -31,4 +31,9 @@
 	        <column name="guest_description" type="text"></column>
 	    </addColumn>
 	</changeSet>
+	<changeSet author="adi3000"  id="0.0.1-zz-03-adding_date_update_guest">
+	    <addColumn tableName="guests">
+	        <column name="guest_last_update" type="timestamp"></column>
+	    </addColumn>
+	</changeSet>
 </databaseChangeLog>

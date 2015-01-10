@@ -1,12 +1,12 @@
-<div id="sec5" class="popup">
+<div id="sec5" class="popup" data-ng-controller="RSVPController">
 	<h1>RSVP</h1>
 	<div class="familly">
-		<div class="guest" data-ng-repeat="guest in qrCode.guests">
+		<div class="guest" data-ng-repeat="guest in qrCode.guests" data-guest-save="guest">
 			<p>{{guest.firstName}} {{guest.lastName}} sera :</p>
 			<div class="btn-group">
-		        <label class="btn btn-primary btn-good" data-ng-model="guest.answer" data-btn-radio="1">De la Partie !</label>
-		        <label class="btn btn-primary" data-ng-model="guest.answer" data-btn-radio="0">Ailleurs, désolé.</label>
-		        <label class="btn btn-primary" data-ng-model="guest.answer" data-btn-radio="-1">A la piscine :/</label>
+		        <label class="btn btn-primary btn-good" data-ng-model="guest.answerId" data-btn-radio="1">De la Partie !</label>
+		        <label class="btn btn-primary" data-ng-model="guest.answerId" data-btn-radio="0">Ailleurs, désolé.</label>
+		        <label class="btn btn-primary" data-ng-model="guest.answerId" data-btn-radio="-1">A la piscine :/</label>
 		    </div>
 		</div>
 	</div>
