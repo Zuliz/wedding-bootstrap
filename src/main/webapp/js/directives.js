@@ -7,8 +7,8 @@ var whichOnesDirectives = angular.module('weddingDirectives', ['ngDialog', 'wedd
 			restrict: 'A',
 			controller: 'WeddingController',
 			template : 
-				'<a class="openRsvp" data-open-rsvp data-ng-if="hash && hash != \'\'")>RSVP</a>'+
-				'<span data-ng-if="!hash" class="changeLocation"><input type="text" data-ng-model="hash"/><button data-ng-click="refreshQrCode()" >Go</button></span>',
+				'<a class="openRsvp" data-open-rsvp data-ng-hide="!hash || hash == \'\'")>RSVP</a>'+
+				'<span data-ng-hide="hash && hash != \'\'"><input type="text" data-ng-model="newhash" placeholder="Code RSVP" /><button data-ng-click="gotoQrCode(newhash)" >Go</button></span>',
 			link: function($scope,$element){
 				console.log("Is it watching ", $scope.hash);
 				$element.children(".openRsvp").click(function(){
@@ -36,6 +36,20 @@ var whichOnesDirectives = angular.module('weddingDirectives', ['ngDialog', 'wedd
 						});
 					}else{
 						sessionStorage.removeItem("qrCode");
+					}
+				});
+			}
+		};
+	}])
+	.directive('guestSave', ['ngDialog', function(ngDialog){
+		return {
+			restrict: 'A',
+			scope : {guest : "="},
+			link : function($scope){
+				var qrCode = $scope.$parent.$parent.qrCode;
+				$scope.$parent.$watch("guest.answerId", function(newHash, old){
+					if(newHash != null && newHash != old){
+						qrCode.$save();
 					}
 				});
 			}
