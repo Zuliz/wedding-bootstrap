@@ -10,14 +10,17 @@ var whichOnesDirectives = angular.module('weddingDirectives', ['ngDialog', 'wedd
 				'<a class="openRsvp" data-open-rsvp data-ng-hide="!hash || hash == \'\'")>RSVP</a>'+
 				'<span data-ng-hide="hash && hash != \'\'"><input type="text" data-ng-model="newhash" placeholder="Code RSVP" /><button data-ng-click="gotoQrCode(newhash)" >Go</button></span>',
 			link: function($scope,$element){
-				console.log("Is it watching ", $scope.hash);
 				$element.children(".openRsvp").click(function(){
-					console.log("hashhhh",  $scope.hash);
 					ngDialog.open({
 						template: "partials/rsvp.html", 
 						data : {hash : $scope.hash}, 
 						controller : "RSVPController"
 					});
+				});
+				$element.children("span").children("input[type=text]").bind("keydown keypress", function(event){
+					if(event.which === 13) {
+						$element.children("span").children("button").click();
+	                }
 				});
 			}
 		};
@@ -27,7 +30,6 @@ var whichOnesDirectives = angular.module('weddingDirectives', ['ngDialog', 'wedd
 			restrict: 'A',
 			link : function($scope){
 				$scope.$watch("hash", function(newHash){
-					console.log("Is it here ", newHash);
 					if(!isEmpty(newHash)){
 						ngDialog.open({ 
 							template: "partials/rsvp.html", 
@@ -54,4 +56,9 @@ var whichOnesDirectives = angular.module('weddingDirectives', ['ngDialog', 'wedd
 				});
 			}
 		};
-	}]);
+	}])
+	.filter('newlines', function() {
+	  return function(text) {
+	    return text.split(/\n/g);
+	  };
+	});

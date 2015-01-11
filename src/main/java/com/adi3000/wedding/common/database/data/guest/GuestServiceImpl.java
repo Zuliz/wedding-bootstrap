@@ -7,6 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +61,7 @@ public class GuestServiceImpl extends AbstractDAO<Guest> implements GuestService
 		@SuppressWarnings("unchecked")
 		List<Guest> guests = super.getSession().createCriteria(Guest.class)
 				.add(Restrictions.eq("typeId", GuestType.BEST_MAN.getValue()))
+				.addOrder(Order.asc("order"))
 				.list();
 		if(guests != null){
 			for(Guest guest : guests){
@@ -100,6 +102,7 @@ public class GuestServiceImpl extends AbstractDAO<Guest> implements GuestService
 	@TransactionalUpdate
 	public QrCode updateAnswerFromQrCode(QrCode request){
 		QrCode qrCode = qrCodeService.get(request.getId());
+		@SuppressWarnings("unused")
 		int updates = 0;
 		for(Guest guest : qrCode.getGuests()){
 			for(Guest guestRequest : request.getGuests()){

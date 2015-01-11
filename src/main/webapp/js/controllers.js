@@ -33,14 +33,16 @@ angular.module('weddingControllers', ['weddingServices', 'ngRoute', 'ngDialog'])
 			weddingService.getQrCode($scope.ngDialogData.hash).$promise.then(function(qrCode){
 				$scope.qrCode= qrCode;
 				sessionStorage.setItem("qrCode", qrCode.hash);
+				$scope.error = null;
 			},function(reason){
 				if(reason.status == "404"){
-					alert("Le code réponse "+$scope.ngDialogData.hash+" n'existe pas");
+					$scope.error ="Le code réponse "+$scope.ngDialogData.hash+" n'existe pas";
+				}else{
+					$scope.error ="Erreur au chargement de l'invitation"
 				}
 				$rootScope.$emit("wrongQrCode", $scope.ngDialogData.hash);
 				sessionStorage.removeItem("qrCode");
 				console.log("Error", reason);
-				$scope.closeThisDialog();
 			});
 		}
 	]);

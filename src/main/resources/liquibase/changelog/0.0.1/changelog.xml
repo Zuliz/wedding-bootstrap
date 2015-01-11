@@ -36,4 +36,14 @@
 	        <column name="guest_last_update" type="timestamp"></column>
 	    </addColumn>
 	</changeSet>
+	<changeSet author="adi3000"  id="0.0.1-zz-03-adding_guest_order">
+	    <addColumn tableName="guests">
+	        <column name="guest_order" type="numeric(3)"></column>
+	    </addColumn>
+	</changeSet>
+	<changeSet author="adi3000"  id="0.0.1-zz-03-adding_qr_negative">
+	    <addColumn tableName="qr_codes">
+	        <column name="qr_negative" type="varchar(50)"></column>
+	    </addColumn>
+	</changeSet>
 </databaseChangeLog>

@@ -8,11 +8,9 @@
 					<div class="lego" data-ng-repeat="bestMan in bestMen" data-ng-if="$even">
 						<div class="person">
 							<div class="card">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet
-									pulvinar enim lobortis eget. Vestibulum ante ipsum primis in
-									faucibus orci luctus et ultrices posuere cubilia Curae; Donec
-									sagittis molestie lectus a rhoncus.</p>
+								<p>
+									<span data-ng-repeat="line in (bestMan.description | newlines) track by $index">{{line}} <br /></span>
+								</p>
 							</div>
 							<div class="img-nom">
 								<img data-ng-src="{{ bestMan.imgSrc }}"
@@ -23,23 +21,27 @@
 					</div>
 				</div>
 				<div class="lego-right">
-					<div class="lego">
-						<div class="lego" data-ng-repeat="bestMan in bestMen" data-ng-if="$odd">
+					<div class="lego" data-ng-repeat="bestMan in bestMen" data-ng-if="$odd">
+						<div class="person">
 							<div class="img-nom">
 								<img data-ng-src="{{ bestMan.imgSrc }}"
 									alt="lego {{ bestMan.firstName }}"class="img-circle" />
 								<p class="text">{{ bestMan.firstName }}</p>
 							</div>
 							<div class="card">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Vivamus at quam nunc. Nunc porttitor varius sapien, sit amet
-									pulvinar enim lobortis eget. Vestibulum ante ipsum primis in
-									faucibus orci luctus et ultrices posuere cubilia Curae; Donec
-									sagittis molestie lectus a rhoncus. Mauris pretium a neque a
-									bibendum. Phasellus posuere dictum eros in porta. Quisque
-									euismod quam quis dignissim interdum. Vestibulum ullamcorper
-									fermentum risus ut finibus. Donec tincidunt auctor viverra.</p>
+								<p>
+									<span data-ng-repeat="line in (bestMan.description | newlines) track by $index">{{line}} <br /></span>
+								</p>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lego-right">
+					<div class="lego">
+						<div class="person" style="vertica">
+							<p>Contact sur <a href="mailto:best-men@adi3000.com" >best-men@adi3000.com</a></p>
+							<p><em>Cette adresse ne contact que les témoins, pas les futurs maries</em></p>
+							<p><em>Contact des futurs mari&eacute;s : <a href="mailto:best-wedding-ever@adi3000.com" >best-wedding-ever@adi3000.com</a></em></p>
 						</div>
 					</div>
 				</div>

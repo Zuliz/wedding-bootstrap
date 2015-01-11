@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import com.adi3000.common.database.hibernate.data.AbstractDataObject;
@@ -24,6 +25,7 @@ public class QrCode extends AbstractDataObject{
 	private Integer id;
 	private String hash;
 	private String description;
+	private String negative;
 	private Set<Guest> guests;
 	
 	/**
@@ -71,6 +73,7 @@ public class QrCode extends AbstractDataObject{
 	 */
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="qr_id")
+	@OrderBy("order")
 	public Set<Guest> getGuests() {
 		return guests;
 	}
@@ -79,6 +82,19 @@ public class QrCode extends AbstractDataObject{
 	 */
 	public void setGuests(Set<Guest> guests) {
 		this.guests = guests;
+	}
+	/**
+	 * @return the negatif
+	 */
+	@Column(name="qr_negative")
+	public String getNegative() {
+		return negative;
+	}
+	/**
+	 * @param negatif the negatif to set
+	 */
+	public void setNegative(String negative) {
+		this.negative = negative;
 	}
 	
 

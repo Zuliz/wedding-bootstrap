@@ -73,7 +73,7 @@ img.grayscale {
 
 .card {
   display: inline-block;
-  vertical-align : middle;
+  vertical-align : top;
   width: 50%;
 }
 
@@ -339,7 +339,7 @@ a:active {
 	height: 100%;
 	margin: 0 auto;
 }
-.menuTop .menuTopEntry{
+.menuTop .menuTopEntry, .menuTop .menuRsvp{
 	display : inline-block;
 	margin : 0 5px;
 }
@@ -399,44 +399,26 @@ a:active {
 .btn:hover,
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:active {
+.btn-primary:active,
+.btn-primary.active {
   background-color: #c02f0c;
 }
 .btn-good.btn:hover,
 .btn-good.btn-primary:hover,
 .btn-good.btn-primary:focus,
-.btn-good.btn-primary:active {
+.btn-good.btn-primary:active,
+.btn-good.btn-primary.active {
   background-color: #036997;
 }
 .menuTitle{
 	display: none;
 }
-@media screen and (max-width: 768px) {
-  .google-map {
-    width: 320px;
-    height: 300px;
-  }
-
-  .header h1 {
-    font-size: 3em;
-  }
-
-  #date {
-    font-size: 2.5em;
-    padding-top: 0;
-  }
-  .menuTopEntry{
-  	display: none;
-  }
-  .menuTitle{
-  	display: inline;
-  }
-}
-
 footer {
   padding: 100px 0;
 }
-
+ .card pre{
+ 	width : 100em;
+ }
 /* -- end custom css for Bootstrap 3.x --*/
 
 .module.parallax {
@@ -463,3 +445,25 @@ footer {
 .module.parallax-1 {
   background-image: url("../img/back.jpg");
 }
+@media screen and (max-width: 801px) {
+  .google-map {
+    width: 320px;
+    height: 300px;
+  }
+
+  .header h1 {
+    font-size: 3em;
+  }
+
+  #date {
+    font-size: 2.5em;
+    padding-top: 0;
+  }
+  .menuTop .menuTopEntry, .menuTop .menuRsvp{
+  	display: none;
+  }
+  .menuTop .menuTitle{
+  	display: inline;
+  }
+}
+

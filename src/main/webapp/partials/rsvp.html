@@ -1,13 +1,13 @@
 <div id="sec5" class="popup" data-ng-controller="RSVPController">
 	<h1>RSVP</h1>
-	<div class="familly">
+	<div class="familly" data-ng-if="!error">
 		<div class="guest" data-ng-repeat="guest in qrCode.guests" data-guest-save="guest">
 			<p>{{guest.firstName}} {{guest.lastName}} sera :</p>
 			<div class="btn-group">
-		        <label class="btn btn-primary btn-good" data-ng-model="guest.answerId" data-btn-radio="1">De la Partie !</label>
-		        <label class="btn btn-primary" data-ng-model="guest.answerId" data-btn-radio="0">Ailleurs, désolé.</label>
-		        <label class="btn btn-primary" data-ng-model="guest.answerId" data-btn-radio="-1">A la piscine :/</label>
+		        <label class="btn btn-primary btn-good" data-ng-model="guest.answerId" data-btn-radio="1"> &gt;&gt; Là &lt;&lt;</label>
+		        <label class="btn btn-primary" data-ng-model="guest.answerId" data-btn-radio="0">{{qrCode.negative}}</label>
 		    </div>
 		</div>
 	</div>
+	<div data-ng-if="error"><h2>{{ error }}</h2></div>
 </div>

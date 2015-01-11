@@ -32,6 +32,7 @@ public class Guest extends AbstractDataObject{
 	private Integer typeId;
 	private String description;
 	private Date lastUpdate;
+	private Integer order;
 	private Set<PrivacyAttribute> privacy;
 
 	@Override
@@ -196,6 +197,21 @@ public class Guest extends AbstractDataObject{
 	 */
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	/**
+	 * @return the order
+	 */
+	@Column(name="guest_order")
+	public Integer getOrder() {
+		return order;
+	}
+
+	/**
+	 * @param order the order to set
+	 */
+	public void setOrder(Integer order) {
+		this.order = order;
 	}
 
 }
