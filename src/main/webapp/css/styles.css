@@ -445,7 +445,7 @@ footer {
 .module.parallax-1 {
   background-image: url("../img/back.jpg");
 }
-@media screen and (max-width: 801px) {
+@media screen and (max-width: 768px) {
   .google-map {
     width: 320px;
     height: 300px;
@@ -465,5 +465,17 @@ footer {
   .menuTop .menuTitle{
   	display: inline;
   }
+  
+  
+	.lego-right, .lego-left {
+	  display: block;
+	  margin-top: 20px;
+	  width: 100%;
+	}
+	
+	.event-date, .images, .placement, .information {
+		text-align: center;
+	}
+	  
 }
 
